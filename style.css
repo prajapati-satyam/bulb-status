@@ -1,0 +1,46 @@
+.status {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main {
+    /* width: 80vw; */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(101, 91, 194);
+    border-radius: 25px;
+}
+img {
+    margin: 25px 0;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+p {
+font-size: 1.5em;
+text-transform: capitalize;
+transition: 200ms;
+}
+
+button {
+    margin: 5px;
+    padding: 15px;
+    border: none;
+    background-color: aliceblue;
+    color: blueviolet;
+    border-radius: 15px;
+    transition: 300ms;
+    box-shadow: -5px -2px 5px black;
+}
+
+button:hover {
+    box-shadow: 5px 5px 25px black;
+    transform: translateY(-6px);
+    border-radius: 25px;
+    cursor: pointer;
+    color: aliceblue;
+    background-color: blueviolet;
+}

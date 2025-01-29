@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link href="./src/output.css" rel="stylesheet"> -->
+     <link rel="stylesheet" href="style.css">
+    <title>bulb logic</title>
+</head>
+<body>
+
+
+    <div class="main bg-blue-500 flex justify-center flex-row">
+        
+        <img src="./assets/bulb-black.jpg" alt="black" class="rounded-[100px] my-4">
+
+    </div>
+
+    <div class="status">
+        <p id="bulb_status">Bulb status : off</p>
+        <p id="battery_status">battery status : off</p>
+        <button id="battery_button">battery : off</button>
+        <p id="main_status">main switch : off</p>
+        <button id="main_button">main switch : off</button>
+    </div>
+
+
+
+    <script>
+   
+let bulb =  false
+let main =  false
+let battery = false;
+
+const bulb_status =  document.getElementById('bulb_status');
+const battery_status = document.getElementById('battery_status');
+const battery_button = document.getElementById('battery_button');
+const main_status = document.getElementById('main_status');
+const main_button = document.getElementById('main_button');
+let img = document.querySelector('img');
+
+
+function battery_onoff() {
+    if(battery === true) {
+              battery = !battery
+              battery_button.innerText = 'battery : on';
+            //   bulb_status.innerText = 'Bulb status : off';
+              battery_status.innerText = 'battery status : off';
+              battery_status.style.backgroundColor = 'white';
+              battery_status.style.borderRadius = '10px'
+    } else {
+        battery = !battery
+              battery_button.innerText = 'battery : off';
+            //   bulb_status.innerText = 'Bulb status : off';
+              battery_status.innerText = 'battery status : on';
+              battery_status.style.backgroundColor = 'lightgreen';
+              battery_status.style.borderRadius = '10px'
+    }
+}
+
+const main_switch = () => {
+    if (main === true) {
+        main = !main;
+        main_button.innerText = 'main switch : on';
+            //   bulb_status.innerText = 'Bulb status : off';
+              main_status.innerText = 'main switch : off';
+              main_status.style.backgroundColor = 'white';
+              main_status.style.borderRadius = '10px'
+
+    } else {
+        main = !main;
+        main_button.innerText = 'main switch : off';
+            //   bulb_status.innerText = 'Bulb status : off';
+              main_status.innerText = 'main switch : on';
+              main_status.style.backgroundColor = 'lightgreen';
+              main_status.style.borderRadius = '10px'
+    }
+}
+
+
+const bulb_onoff = () => {
+    if (main && battery) {
+            bulb_status.innerText = 'Bulb status : on';
+            img.src = './assets/bulb-on 260 x 280.jpg';
+            bulb_status.style.backgroundColor = 'lightgreen';
+            bulb_status.style.borderRadius = '10px'
+    } else {
+        bulb_status.innerText = 'Bulb status : off';
+        img.src = './assets/bulb-black.jpg';
+        bulb_status.style.backgroundColor = 'white';
+        bulb_status.style.borderRadius = '10px'
+    }
+}
+
+battery_button.addEventListener('click', battery_onoff)
+main_button.addEventListener('click', main_switch)
+
+battery_button.addEventListener('click', bulb_onoff)
+main_button.addEventListener('click', bulb_onoff)
+    </script>
+</body>
+</html>
