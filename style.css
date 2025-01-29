@@ -17,6 +17,8 @@ img {
     margin: 25px 0;
     border-radius: 50px;
     object-fit: cover;
+    height: 200px;
+    width: 200px;
 }
 
 p {
